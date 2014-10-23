@@ -31,7 +31,7 @@ var options = {
     cert: fs.readFileSync('tls/cert.pem')
   }
 
-httpsServer = https.createServer(function(req, res) {
+httpsServer = https.createServer(options, function(req, res) {
   console.log('received request');
 
   req.on('data', function(chunk) {
